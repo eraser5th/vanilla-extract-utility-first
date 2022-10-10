@@ -39,6 +39,6 @@ export const position = {
 
 export const positionProperties = {
   position: Position,
-}
+};
 
-export const positionShorthands = {}
+export const positionShorthands = {};
