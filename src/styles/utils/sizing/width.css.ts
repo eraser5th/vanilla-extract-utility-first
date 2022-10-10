@@ -6,8 +6,19 @@ import {
   pxUnitKeys,
 } from "../../constants";
 
+enum WidthKeyword {
+  screen = "100vw",
+  min = "min-content",
+  max = "max-content",
+  fit = "fit-content",
+}
+
+const widthKeywordKeys = ["screen", "min", "max", "fit"] as const;
+
 type WidthStyles = Record<
-  typeof pxUnitKeys[number] | typeof percentUnitKeys[number],
+  | typeof pxUnitKeys[number]
+  | typeof percentUnitKeys[number]
+  | typeof widthKeywordKeys[number],
   string
 >;
 
@@ -25,6 +36,11 @@ percentUnitKeys.forEach((percentUnitKey) => {
   });
 });
 
+widthKeywordKeys.forEach((widthKeywordKey) => {
+  partialW[widthKeywordKey] = style({
+    width: WidthKeyword[widthKeywordKey],
+  });
+});
 export const w: WidthStyles = partialW as WidthStyles;
 
 export const widthProperties = {
