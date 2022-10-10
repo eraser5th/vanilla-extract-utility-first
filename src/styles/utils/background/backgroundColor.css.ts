@@ -25,6 +25,8 @@ const keywordStyles = {
   transparent,
 };
 
+// WARN: disable any
+// eslint-disable-next-line
 const rgbStyles: any = {
   black: style({
     backgroundColor: Colors.black,
