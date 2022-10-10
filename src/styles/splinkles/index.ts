@@ -1,2 +1,2 @@
-export * from "./focus.css";
-export * from "./hover.css";
+export * from "./pseudoClasses";
+export * from "./pseudoElements";
