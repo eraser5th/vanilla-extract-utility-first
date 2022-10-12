@@ -4,9 +4,9 @@ import {
   backgroundAttachmentShorthands,
 } from "./backgroundAttachment.css";
 import {
-  backgroundColor,
   backgroundColorProperties,
   backgroundColorShorthands,
+  bgColor,
 } from "./backgroundColor.css";
 import {
   backgroundSizeProperties,
@@ -19,7 +19,7 @@ export * from "./backgroundColor.css";
 
 export const bg = {
   ...backgroundAttachment,
-  ...backgroundColor,
+  ...bgColor,
   ...bgSize,
 };
 

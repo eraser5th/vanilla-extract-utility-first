@@ -1,65 +1,18 @@
 import { style } from "@vanilla-extract/css";
-import { Colors, colorNames, colorLevels } from "../../constants/colors";
+import { Colors, colors } from "../../constants/colors";
 
-enum BackgroundColorKeywords {
-  inherit = "inheirit",
-  current = "currentColor",
-  transparent = "transparent",
-}
+type BackgroundColor = Record<typeof colors[number], string>;
 
-export const inherit = style({
-  backgroundColor: BackgroundColorKeywords.inherit,
-});
-
-export const current = style({
-  backgroundColor: BackgroundColorKeywords.current,
-});
-
-export const transparent = style({
-  backgroundColor: BackgroundColorKeywords.transparent,
-});
-
-const keywordStyles = {
-  inherit,
-  current,
-  transparent,
-};
-
-// WARN: disable any
-// eslint-disable-next-line
-const rgbStyles: any = {
-  black: style({
-    backgroundColor: Colors.black,
-  }),
-  white: style({
-    backgroundColor: Colors.white,
-  }),
-};
-
-colorNames.forEach((cl) => {
-  colorLevels.forEach((lv) => {
-    rgbStyles[`${cl}${lv}`] = style({
-      backgroundColor: Colors[`${cl}${lv}`],
-    });
-  });
-});
-
-const typedRgbStyles: Record<keyof typeof Colors, string> = {
-  ...rgbStyles,
-};
-
-export const backgroundColor = {
-  ...keywordStyles,
-  ...typedRgbStyles,
-};
-
-export const bgColor = backgroundColor;
+export const bgColor = colors
+  .map((color) => ({
+    [color]: style({
+      backgroundColor: Colors[color],
+    }),
+  }))
+  .reduce((a, b) => ({ ...a, ...b })) as BackgroundColor;
 
 export const backgroundColorProperties = {
-  backgroundColor: {
-    ...BackgroundColorKeywords,
-    ...Colors,
-  },
+  backgroundColor: Colors,
 };
 
 export const backgroundColorShorthands = {
