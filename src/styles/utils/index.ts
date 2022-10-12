@@ -1,4 +1,5 @@
 import { backgroundProperties, backgroundShorthands } from "./background";
+import { borderProperties, borderShorthands } from "./border";
 import { layoutProperties, layoutShorthands } from "./layout";
 import { sizingProperties, sizingShorthands } from "./sizing";
 import { spacingProperties, spacingShorthands } from "./spacing";
@@ -15,6 +16,7 @@ export const properties = {
   ...spacingProperties,
   ...sizingProperties,
   ...typographyProperties,
+  ...borderProperties,
 };
 
 export const shorthands = {
@@ -23,4 +25,5 @@ export const shorthands = {
   ...spacingShorthands,
   ...sizingShorthands,
   ...typographyShorthands,
+  ...borderShorthands,
 };
