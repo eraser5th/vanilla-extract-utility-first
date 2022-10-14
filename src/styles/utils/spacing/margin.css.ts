@@ -1,59 +1,76 @@
 import { style } from "@vanilla-extract/css";
 import { PxUnit, pxUnitKeys } from "../../constants/pxUnits";
 
-type MarginStyles = Record<typeof pxUnitKeys[number], string>;
+const keys = [...pxUnitKeys, "auto"] as const;
 
-const partialM: Partial<MarginStyles> = {};
+type Styles = Record<typeof keys[number], string>;
 
-pxUnitKeys.forEach((pxUnitKey) => {
-  partialM[pxUnitKey] = style({
-    margin: PxUnit[pxUnitKey],
-  });
-});
+export const m = [
+  pxUnitKeys.map((key) => ({
+    [key]: style({
+      margin: PxUnit[key],
+    }),
+  })),
+  {
+    auto: style({
+      margin: "auto",
+    }),
+  },
+].reduce((a, b) => ({ ...a, ...b })) as Styles;
 
-export const m: MarginStyles = partialM as MarginStyles;
+export const mt = [
+  pxUnitKeys.map((key) => ({
+    [key]: style({
+      marginTop: PxUnit[key],
+    }),
+  })),
+  {
+    auto: style({
+      marginTop: "auto",
+    }),
+  },
+].reduce((a, b) => ({ ...a, ...b })) as Styles;
 
-const partialMl: Partial<MarginStyles> = {};
+export const mr = [
+  pxUnitKeys.map((key) => ({
+    [key]: style({
+      marginRight: PxUnit[key],
+    }),
+  })),
+  {
+    auto: style({
+      marginRight: "auto",
+    }),
+  },
+].reduce((a, b) => ({ ...a, ...b })) as Styles;
 
-pxUnitKeys.forEach((pxUnitKey) => {
-  partialMl[pxUnitKey] = style({
-    marginLeft: PxUnit[pxUnitKey],
-  });
-});
+export const mb = [
+  pxUnitKeys.map((key) => ({
+    [key]: style({
+      marginBottom: PxUnit[key],
+    }),
+  })),
+  {
+    auto: style({
+      marginBottom: "auto",
+    }),
+  },
+].reduce((a, b) => ({ ...a, ...b })) as Styles;
 
-export const ml: MarginStyles = partialMl as MarginStyles;
+export const ml = [
+  pxUnitKeys.map((key) => ({
+    [key]: style({
+      marginLeft: PxUnit[key],
+    }),
+  })),
+  {
+    auto: style({
+      marginLeft: "auto",
+    }),
+  },
+].reduce((a, b) => ({ ...a, ...b })) as Styles;
 
-const partialMr: Partial<MarginStyles> = {};
-
-pxUnitKeys.forEach((pxUnitKey) => {
-  partialMr[pxUnitKey] = style({
-    marginRight: PxUnit[pxUnitKey],
-  });
-});
-
-export const mr: MarginStyles = partialMr as MarginStyles;
-
-const partialMt: Partial<MarginStyles> = {};
-
-pxUnitKeys.forEach((pxUnitKey) => {
-  partialMt[pxUnitKey] = style({
-    marginTop: PxUnit[pxUnitKey],
-  });
-});
-
-export const mt: MarginStyles = partialMt as MarginStyles;
-
-const partialMb: Partial<MarginStyles> = {};
-
-pxUnitKeys.forEach((pxUnitKey) => {
-  partialMb[pxUnitKey] = style({
-    marginBottom: PxUnit[pxUnitKey],
-  });
-});
-
-export const mb: MarginStyles = partialMb as MarginStyles;
-
-export const mx: MarginStyles = pxUnitKeys
+export const mx = keys
   .map((pxUnitKey) => {
     return {
       [pxUnitKey]: style([ml[pxUnitKey], mr[pxUnitKey]]),
@@ -62,9 +79,9 @@ export const mx: MarginStyles = pxUnitKeys
   .reduce((a, b) => ({
     ...a,
     ...b,
-  })) as MarginStyles;
+  })) as Styles;
 
-export const my: MarginStyles = pxUnitKeys
+export const my = pxUnitKeys
   .map((pxUnitKey) => {
     return {
       [pxUnitKey]: style([mt[pxUnitKey], mb[pxUnitKey]]),
@@ -73,7 +90,7 @@ export const my: MarginStyles = pxUnitKeys
   .reduce((a, b) => ({
     ...a,
     ...b,
-  })) as MarginStyles;
+  })) as Styles;
 
 export const marginProperties = {
   margin: PxUnit,
