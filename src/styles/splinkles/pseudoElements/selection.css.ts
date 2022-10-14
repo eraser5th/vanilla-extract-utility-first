@@ -1,13 +1,13 @@
 import { createSprinkles, defineProperties } from "@vanilla-extract/sprinkles";
-import { properties as styleProperties, shorthands } from "../../utils";
+import { properties, shorthands } from "../../utils";
 
-const properties = defineProperties({
+const sprinkleProperties = defineProperties({
   conditions: {
     selection: { selector: "&::selection" },
   },
   defaultCondition: "selection",
-  properties: styleProperties,
+  properties,
   shorthands,
 });
 
-export const selection = createSprinkles(properties);
+export const selection = createSprinkles(sprinkleProperties);
