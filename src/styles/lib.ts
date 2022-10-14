@@ -1,2 +1,2 @@
-export const className = (...classNames: string[]): string =>
-  classNames.join(" ");
+export const className = (...classNames: (string | false)[]): string =>
+  classNames.filter((v) => v !== false).join(" ");
