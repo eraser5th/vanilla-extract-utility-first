@@ -16,18 +16,22 @@ import {
   textAlignProperties,
   textAlignShorthands,
 } from "./textAlign.css";
-import { textColor, textColorProperties } from "./textColor.css";
+import {
+  textColor,
+  textColorProperties,
+  textColorShorthands,
+} from "./textColor.css";
 
 export * from "./fontFamily.css";
 export * from "./fontSize.css";
 export * from "./fontWeight.css";
 export * from "./lineHeight.css";
 export * from "./listStyle.css";
+export * from "./textColor.css";
 
 export const typographyProperties = {
   ...fontFamilyProperties,
   ...fontSizeProperties,
-  ...fontFamilyProperties,
   ...fontWeightProperties,
   ...lineHeightProperties,
   ...listStyleProperties,
@@ -38,12 +42,11 @@ export const typographyProperties = {
 export const typographyShorthands = {
   ...fontFamilyShorthands,
   ...fontSizeShorthands,
-  ...fontFamilyShorthands,
   ...fontWeightShorthands,
   ...lineHeightShorthands,
   ...listStyleShorthands,
   ...textAlignShorthands,
-  ...textAlignShorthands,
+  ...textColorShorthands,
 };
 
 export const font = {

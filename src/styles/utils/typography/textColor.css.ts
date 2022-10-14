@@ -16,5 +16,5 @@ export const textColorProperties = {
 };
 
 export const textColorShorthands = {
-  textColor: ["textColor"] as ["textColor"],
+  textColor: ["color"] as ["color"],
 };

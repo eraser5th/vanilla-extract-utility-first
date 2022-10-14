@@ -26,7 +26,7 @@ const partialW: Partial<HeightStyles> = {};
 
 pxUnitKeys.forEach((pxUnitKey) => {
   partialW[pxUnitKey] = style({
-    height: pxUnitKey,
+    height: PxUnit[pxUnitKey],
   });
 });
 
