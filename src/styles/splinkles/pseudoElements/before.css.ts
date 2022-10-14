@@ -1,5 +1,5 @@
 import { createSprinkles, defineProperties } from "@vanilla-extract/sprinkles";
-import { properties , shorthands } from "../../utils";
+import { properties, shorthands } from "../../utils";
 
 const sprinkleProperties = defineProperties({
   conditions: {
