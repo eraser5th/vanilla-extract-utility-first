@@ -13,13 +13,7 @@ export const App: React.FC = () => {
           px.px20,
           py.px40,
           box.border,
-          hover({
-            container: "lg",
-            bgColor: "red200",
-            m: "px32",
-            mx: "px64",
-            p: "px68",
-          })
+          hover({})
         )}
       >
         {"ahoy".repeat(100)}
