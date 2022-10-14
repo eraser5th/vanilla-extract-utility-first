@@ -6,7 +6,7 @@ const keys = [...pxUnitKeys, "auto"] as const;
 type Styles = Record<typeof keys[number], string>;
 
 export const m = [
-  pxUnitKeys.map((key) => ({
+  ...pxUnitKeys.map((key) => ({
     [key]: style({
       margin: PxUnit[key],
     }),
@@ -19,7 +19,7 @@ export const m = [
 ].reduce((a, b) => ({ ...a, ...b })) as Styles;
 
 export const mt = [
-  pxUnitKeys.map((key) => ({
+  ...pxUnitKeys.map((key) => ({
     [key]: style({
       marginTop: PxUnit[key],
     }),
@@ -32,7 +32,7 @@ export const mt = [
 ].reduce((a, b) => ({ ...a, ...b })) as Styles;
 
 export const mr = [
-  pxUnitKeys.map((key) => ({
+  ...pxUnitKeys.map((key) => ({
     [key]: style({
       marginRight: PxUnit[key],
     }),
@@ -45,7 +45,7 @@ export const mr = [
 ].reduce((a, b) => ({ ...a, ...b })) as Styles;
 
 export const mb = [
-  pxUnitKeys.map((key) => ({
+  ...pxUnitKeys.map((key) => ({
     [key]: style({
       marginBottom: PxUnit[key],
     }),
@@ -58,7 +58,7 @@ export const mb = [
 ].reduce((a, b) => ({ ...a, ...b })) as Styles;
 
 export const ml = [
-  pxUnitKeys.map((key) => ({
+  ...pxUnitKeys.map((key) => ({
     [key]: style({
       marginLeft: PxUnit[key],
     }),
@@ -71,9 +71,9 @@ export const ml = [
 ].reduce((a, b) => ({ ...a, ...b })) as Styles;
 
 export const mx = keys
-  .map((pxUnitKey) => {
+  .map((key) => {
     return {
-      [pxUnitKey]: style([ml[pxUnitKey], mr[pxUnitKey]]),
+      [key]: style([ml[key], mr[key]]),
     };
   })
   .reduce((a, b) => ({
@@ -81,10 +81,10 @@ export const mx = keys
     ...b,
   })) as Styles;
 
-export const my = pxUnitKeys
-  .map((pxUnitKey) => {
+export const my = keys
+  .map((key) => {
     return {
-      [pxUnitKey]: style([mt[pxUnitKey], mb[pxUnitKey]]),
+      [key]: style([mt[key], mb[key]]),
     };
   })
   .reduce((a, b) => ({
