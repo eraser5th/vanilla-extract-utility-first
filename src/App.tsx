@@ -74,6 +74,11 @@ export const App: React.FC = () => {
             <li>
               <a href="https://twitter.com/eraser5th">twitter</a>
             </li>
+            <li>
+              <a href="https://github.com/eraser5th/vanilla-extract-utility-first">
+                code for this page
+              </a>
+            </li>
           </ul>
         </footer>
         <div className={h.px80} />
