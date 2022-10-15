@@ -40,7 +40,7 @@ export const App: React.FC = () => {
         <div className={h.px40} />
         <Stack gap="px16">
           <Card sectioned shadow>
-            <h1 className={className(font.bold, fontSize["5xl"])}>About me</h1>
+            <h1 className={className(font.bold, fontSize["4xl"])}>About me</h1>
             <ul>
               <li>{aboutMe.handleName}</li>
               <li>{aboutMe.name}</li>
@@ -48,7 +48,7 @@ export const App: React.FC = () => {
             </ul>
           </Card>
           <Card sectioned shadow>
-            <h1 className={className(font.bold, fontSize["5xl"])}>Skills</h1>
+            <h1 className={className(font.bold, fontSize["4xl"])}>Skills</h1>
             <ul>
               {skills.map((skill) => (
                 <li>{skill}</li>
@@ -56,7 +56,7 @@ export const App: React.FC = () => {
             </ul>
           </Card>
           <Card sectioned shadow>
-            <h1 className={className(font.bold, fontSize["5xl"])}>Hobbies</h1>
+            <h1 className={className(font.bold, fontSize["4xl"])}>Hobbies</h1>
             <ul>
               {hobbies.map((skill) => (
                 <li>{skill}</li>
