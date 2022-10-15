@@ -33,10 +33,13 @@ export const App: React.FC = () => {
     <Page>
       <Layout>
         <div className={h.px60} />
-        <img className={className(h.px200, w.px200)} src={profileImage} />
-        <div className={h.px40} />
         <Stack>
-          <Card>
+          <img className={className(h.px200, w.px200)} src={profileImage} />
+          <h1 className={className(fontSize["6xl"])}>eraser5th</h1>
+        </Stack>
+        <div className={h.px40} />
+        <Stack gap="px16">
+          <Card sectioned shadow>
             <h1 className={className(font.bold, fontSize["5xl"])}>About me</h1>
             <ul>
               <li>{aboutMe.handleName}</li>
@@ -44,7 +47,7 @@ export const App: React.FC = () => {
               <li>{aboutMe.age}</li>
             </ul>
           </Card>
-          <Card>
+          <Card sectioned shadow>
             <h1 className={className(font.bold, fontSize["5xl"])}>Skills</h1>
             <ul>
               {skills.map((skill) => (
@@ -52,7 +55,7 @@ export const App: React.FC = () => {
               ))}
             </ul>
           </Card>
-          <Card>
+          <Card sectioned shadow>
             <h1 className={className(font.bold, fontSize["5xl"])}>Hobbies</h1>
             <ul>
               {hobbies.map((skill) => (

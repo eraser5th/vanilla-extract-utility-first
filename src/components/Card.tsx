@@ -2,6 +2,7 @@ import { className } from "../styles/lib";
 import {
   bg,
   box,
+  boxShadow,
   fontSize,
   fontWeight,
   lineHeight,
@@ -16,16 +17,18 @@ export const Card: React.FC<{
   children: React.ReactNode;
   title?: string;
   sectioned?: boolean;
-}> = ({ children, title = "", sectioned = false }) => {
+  shadow?: boolean;
+}> = ({ children, title = "", sectioned = false, shadow = false }) => {
   return (
     <div
       className={className(
         box.border,
         bg.white,
         w.full,
-        py.px16,
+        py.px20,
         rounded.px8,
-        sectioned && px.px16
+        sectioned && px.px16,
+        shadow && boxShadow.lg
       )}
     >
       {title !== "" && (

@@ -13,7 +13,7 @@ type Styles = Record<typeof keys[number], string>;
 
 export const flexDirection = keys
   .map((key) => ({
-    [key]: style({ transitionDelay: FlexDirection[key] }),
+    [key]: style({ flexDirection: FlexDirection[key] }),
   }))
   .reduce((a, b) => ({ ...a, ...b })) as Styles;
 

@@ -1,6 +1,7 @@
 import { animationProperties, animationShorthands } from "./animation";
 import { backgroundProperties, backgroundShorthands } from "./background";
 import { borderProperties, borderShorthands } from "./border";
+import { effectsProperties, effectsShorthands } from "./effects";
 import { flexbox_gridProperties, flexbox_gridShorthands } from "./flexbox_grid";
 import { layoutProperties, layoutShorthands } from "./layout";
 import { sizingProperties, sizingShorthands } from "./sizing";
@@ -17,6 +18,7 @@ export * from "./typography";
 export * from "./transition";
 export * from "./animation";
 export * from "./flexbox_grid";
+export * from "./effects";
 
 export const properties = {
   ...layoutProperties,
@@ -28,6 +30,7 @@ export const properties = {
   ...transitionProperties,
   ...animationProperties,
   ...flexbox_gridProperties,
+  ...effectsProperties,
 };
 
 export const shorthands = {
@@ -40,4 +43,5 @@ export const shorthands = {
   ...transitionShorthands,
   ...animationShorthands,
   ...flexbox_gridShorthands,
+  ...effectsShorthands,
 };
