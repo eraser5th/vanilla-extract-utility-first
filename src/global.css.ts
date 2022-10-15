@@ -3,6 +3,7 @@ import { globalStyle } from "@vanilla-extract/css";
 globalStyle(":root", {
   fontFamily: "Inter, Avenir, Helvetica, Arial, sans-serif",
   fontSize: "16px",
+  color: "#3d3d3d",
   lineHeight: "24px",
   fontWeight: 400,
 });

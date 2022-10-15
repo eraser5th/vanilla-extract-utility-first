@@ -64,6 +64,18 @@ export const App: React.FC = () => {
             </ul>
           </Card>
         </Stack>
+        <div className={h.px120} />
+        <footer>
+          <h1 className={className(font.bold, fontSize["2xl"])}>Links</h1>
+          <ul>
+            <li>
+              <a href="https://github.com/eraser5th">github</a>
+            </li>
+            <li>
+              <a href="https://twitter.com/eraser5th">twitter</a>
+            </li>
+          </ul>
+        </footer>
         <div className={h.px80} />
       </Layout>
     </Page>
