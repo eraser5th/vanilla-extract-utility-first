@@ -33,7 +33,7 @@ export const App: React.FC = () => {
     <Page>
       <Layout>
         <div className={h.px60} />
-        <Stack>
+        <Stack gap="px80">
           <img className={className(h.px200, w.px200)} src={profileImage} />
           <h1 className={className(fontSize["6xl"])}>eraser5th</h1>
         </Stack>
