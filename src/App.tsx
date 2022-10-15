@@ -4,6 +4,8 @@ import { getAge } from "./lib";
 import { className } from "./styles/lib";
 import { font, fontSize, h, w } from "./styles/utils";
 import profileImage from "./assets/Slack_Icon_20220507.png";
+import { Stack } from "./components/Stack";
+import { Card } from "./components/Card";
 
 const aboutMe = {
   name: "加藤豪 (Takeshi Kato)",
@@ -30,28 +32,35 @@ export const App: React.FC = () => {
   return (
     <Page>
       <Layout>
-        <div className={h.px40} />
-        <h1 className={className(font.bold, fontSize["5xl"])}>About me</h1>
+        <div className={h.px60} />
         <img className={className(h.px200, w.px200)} src={profileImage} />
-        <ul>
-          <li>{aboutMe.handleName}</li>
-          <li>{aboutMe.name}</li>
-          <li>{aboutMe.age}</li>
-        </ul>
-        <div className={h.px20} />
-        <h1 className={className(font.bold, fontSize["5xl"])}>Skills</h1>
-        <ul>
-          {skills.map((skill) => (
-            <li>{skill}</li>
-          ))}
-        </ul>
-        <div className={h.px20} />
-        <h1 className={className(font.bold, fontSize["5xl"])}>Hobbies</h1>
-        <ul>
-          {hobbies.map((skill) => (
-            <li>{skill}</li>
-          ))}
-        </ul>
+        <div className={h.px40} />
+        <Stack>
+          <Card>
+            <h1 className={className(font.bold, fontSize["5xl"])}>About me</h1>
+            <ul>
+              <li>{aboutMe.handleName}</li>
+              <li>{aboutMe.name}</li>
+              <li>{aboutMe.age}</li>
+            </ul>
+          </Card>
+          <Card>
+            <h1 className={className(font.bold, fontSize["5xl"])}>Skills</h1>
+            <ul>
+              {skills.map((skill) => (
+                <li>{skill}</li>
+              ))}
+            </ul>
+          </Card>
+          <Card>
+            <h1 className={className(font.bold, fontSize["5xl"])}>Hobbies</h1>
+            <ul>
+              {hobbies.map((skill) => (
+                <li>{skill}</li>
+              ))}
+            </ul>
+          </Card>
+        </Stack>
         <div className={h.px80} />
       </Layout>
     </Page>
